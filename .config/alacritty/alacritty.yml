@@ -1,0 +1,11 @@
+key_bindings:
+  # ...
+  - { key: Tab, mods: Control, chars: "\x1b[27;5;9~" }
+# Font config:
+font:
+    # Normal (Jetbrains mono):
+    normal:
+        family: JetBrainsMono Nerd Font Mono
+        style: Regular
+shell:
+  program: /usr/bin/fish
