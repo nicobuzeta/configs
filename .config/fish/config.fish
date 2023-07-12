@@ -9,6 +9,6 @@ end
 
 set fish_greeting ""
 load_nvm
-alias config='/usr/bin/git --git-dir=$HOME/.configs --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/configs --work-tree=$HOME'
 
 
