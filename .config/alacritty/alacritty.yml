@@ -7,5 +7,3 @@ font:
     normal:
         family: JetBrainsMono Nerd Font Mono
         style: Regular
-shell:
-  program: /usr/bin/fish
