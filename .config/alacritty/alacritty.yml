@@ -8,4 +8,4 @@ font:
         family: JetBrainsMono Nerd Font Mono
         style: Regular
 shell:
-  program: /usr/local/bin/fish
+  program: /usr/bin/fish
