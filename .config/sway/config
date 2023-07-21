@@ -240,4 +240,8 @@ bar {
     }
 }
 
+# screenshots
+    bindsym Print exec sway-interactive-screenshot
+
+
 include /etc/sway/config.d/*
