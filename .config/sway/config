@@ -102,6 +102,7 @@ workspace 3 output DP-3
 # bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 # bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
+bindsym XF86AudioPlay exec playerctl play-pause
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
@@ -243,5 +244,17 @@ bar {
 # screenshots
     bindsym Print exec sway-interactive-screenshot
 
+# Applications
+    bindsym $mod+Shift+f exec firefox
+    bindsym $mod+Shift+s exec slack
+    bindsym $mod+Shift+d exec discord
+
+# Shutdown
+    bindsym $mod+Shift+Control+Escape exec 'shutdown -h now'
+
+# Keyboard
+input "type:keyboard" {
+    xkb_options ctrl:nocaps
+}
 
 include /etc/sway/config.d/*

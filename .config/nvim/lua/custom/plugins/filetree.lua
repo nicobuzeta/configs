@@ -22,7 +22,12 @@ return {
         mappings = {
           ["l"] = "open",
         }
-      }
+      },
+      filesystem = {
+        follow_current_file = {
+          enable = true,
+        }
+      },
     })
   end,
 }

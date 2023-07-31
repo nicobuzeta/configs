@@ -94,6 +94,7 @@ wk.register({
     name = "Debug",
     c = {"<cmd>lua require'dap'.continue()<cr>", "Continue"},
     C = {"<cmd>lua require'dap'.terminate()<cr>", "Disconnect"},
+    l = {"<cmd>lua require'dap'.run_last()<cr>", "Repeat Last"},
     b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint"},
     B = {"<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", "Set Breakpoint"},
     s = {"<cmd>lua require'dap'.step_into()<cr>", "Step Into"},
