@@ -426,6 +426,7 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
+  pylsp = {},
   tsserver ={},
   lua_ls = {
     Lua = {
