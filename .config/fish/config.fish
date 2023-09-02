@@ -9,6 +9,7 @@ end
 
 set fish_greeting ""
 load_nvm
+pyenv init - | source
 alias config='/usr/bin/git --git-dir=$HOME/configs --work-tree=$HOME'
 
 
