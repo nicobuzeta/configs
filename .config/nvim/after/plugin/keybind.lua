@@ -30,8 +30,8 @@ end
 wk.register({
   -- Neotree binds
   e = {"<cmd>Neotree action=focus<cr>", "Focus Neotree"},
-  ['0'] = {"<cmd>Neotree action=focus<cr>", "Focus Neotree"},
-  E = {"<cmd>Neotree action=focus toggle<cr>", "Open Neotree"},
+  ['0'] = {"<cmd>Neotree reveal<cr>", "Focus Neotree on current file"},
+  E = {"<cmd>Neotree action=focus toggle<cr>", "Toggle Neotree"},
   -- Previous Buffers
   ["<tab>"] = {"<cmd>b#<cr>", "Previous buffer"},
   -- Telescope Buffers

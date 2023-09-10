@@ -10,11 +10,13 @@ return {
     "MunifTanjim/nui.nvim",
     {
       's1n7ax/nvim-window-picker',
-      tag = 'v1.*',
+      name = 'window-picker',
+      event = 'VeryLazy',
+      version = '2.*',
       config = function()
           require'window-picker'.setup()
       end,
-    }
+  }
   },
   config = function ()
     require('neo-tree').setup({
@@ -26,8 +28,8 @@ return {
       filesystem = {
         follow_current_file = {
           enable = true,
-        }
-      },
+      }
+    },
     })
   end,
 }
