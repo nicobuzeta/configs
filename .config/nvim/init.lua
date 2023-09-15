@@ -489,6 +489,23 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+local function is_server_in_servers(server_name)
+    for _, server in pairs(vim.tbl_keys(servers)) do
+        if server == server_name then
+            return true
+        end
+    end
+    return false
+end
+
+if not is_server_in_servers("clangd") then
+  require('lspconfig').clangd.setup {
+  cmd = { "clangd" }, -- Replace with full path if clangd isn't in your system's PATH
+  capabilities = capabilities,
+  on_attach = on_attach,
+  }
+end
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
