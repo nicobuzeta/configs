@@ -1,5 +1,9 @@
 if test -z "$WAYLAND_DISPLAY" ; and test "$XDG_VTNR" != "" ; and test "$XDG_VTNR" -eq 1 ; and test "$SSH_TTY" != "/dev/pts/0"
-    sway-nvidia
+    if test "$(hostname)" = "asahi-linux"
+        sway
+    else
+        sway_nvidia
+    end
 end
 
 if status is-interactive
