@@ -450,7 +450,6 @@ require('dap')
 
 require("mason-nvim-dap").setup({
   ensure_installed = {
-    "javadbg",
   },
   automatic_installation = false,
   handlers = {
@@ -500,7 +499,7 @@ end
 
 if not is_server_in_servers("clangd") then
   require('lspconfig').clangd.setup {
-  cmd = { "clangd" }, -- Replace with full path if clangd isn't in your system's PATH
+  cmd = { 'clangd' }, -- Replace with full path if clangd isn't in your system's PATH
   capabilities = capabilities,
   on_attach = on_attach,
   }
