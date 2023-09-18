@@ -61,16 +61,30 @@ workspace 3 output DP-3
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
-#
+## Input configuration
+
 # Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+
+# Mac Asahi
+input "1452:641:Apple_Internal_Keyboard_/_Trackpad" {
+    dwt enabled                 #Disable while typing
+    tap enabled                 #Tap registers as a click
+    accel_profile flat      #adaptive/flat cursor acceleration
+    pointer_accel 0             #From -1 to 1: Speed of cursor
+    natural_scroll enabled      #Direction of Scroll
+    scroll_factor 0.4           #Speed of Scrolling gets multiplied by this factor
+    scroll_method two_finger    #none|two_finger|edge|on_button_down
+    middle_emulation enabled    #Enables middle click
+    tap_button_map lmr          #1Finger > Left Click , 2Finger > Right Click, 3Fingers > MiddleClick
+}
+
+input "1452:641:Apple_Internal_Keyboard_/_Trackpad" {
+    repeat_rate 30
+    repeat_delay 350
+    xkb_options ctrl:nocaps
+}
+
+
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
