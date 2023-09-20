@@ -56,6 +56,7 @@ wk.register({
     G = { telescope_builin.grep_string, "Search Current String" },
     t = { "<cmd>TodoTelescope<cr>", "Project Todos" },
     p = { "<cmd>let @+=expand('%:p')<cr>", "Current Buffer Path" },
+    P = { "<cmd>let @+=expand('%:p') . ':' . line('.')<cr>", "Current Buffer Path" },
     F = { vim.lsp.buf.format, "Format Buffer" }
   },
   -- Tab binds

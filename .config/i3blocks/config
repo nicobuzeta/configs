@@ -2,6 +2,11 @@
 command=/home/nicobuzeta/.config/i3blocks/i3blocks-contrib/battery2/battery2
 markup=pango
 interval=30
+[wifi]
+command=/home/nicobuzeta/.config/i3blocks/i3blocks-contrib/wifi/wifi
+label=wifi:
+INTERFACE=wlan0
+interval=60
 [time]
 command=date +'%Y-%m-%d %I:%M:%S %p'
 interval=1
