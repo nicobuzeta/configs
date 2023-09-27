@@ -132,8 +132,8 @@ bindsym $mod+m exec pactl set-default-sink $(pactl list short sinks |awk '{print
 bindsym $mod+Shift+m exec pactl set-card-profile 39 $(echo -e "output:hdmi-stereo\noutput:hdmi-stereo-extra1\noutput:hdmi-stereo-extra2" | bemenu) && sleep 0.5 && pactl set-default-sink $(pactl list short sinks | grep hdmi | awk '{print $2}')
 
 # Laptop brightness
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 # Moving around:
 #
