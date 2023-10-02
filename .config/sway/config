@@ -129,7 +129,7 @@ bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $WOBSO
 bindsym XF86AudioMute exec pamixer --toggle-mute && ( [ "$(pamixer --get-mute)" = "true" ] && echo 0 > $WOBSOCK ) || pamixer --get-volume > $WOBSOCK
 bindsym $mod+m exec pactl set-default-sink $(pactl list short sinks |awk '{print $2}' |bemenu)
 # Switch between monitors audio
-bindsym $mod+Shift+m exec pactl set-card-profile 39 $(echo -e "output:hdmi-stereo\noutput:hdmi-stereo-extra1\noutput:hdmi-stereo-extra2" | bemenu) && sleep 0.5 && pactl set-default-sink $(pactl list short sinks | grep hdmi | awk '{print $2}')
+bindsym $mod+Shift+m exec ~/.config/sway/scripts/switch-monitor-audio.sh
 
 # Laptop brightness
 bindsym XF86MonBrightnessUp exec light -A 10
