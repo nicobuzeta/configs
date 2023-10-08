@@ -132,9 +132,9 @@ bindsym $mod+m exec pactl set-default-sink $(pactl list short sinks |awk '{print
 bindsym $mod+Shift+m exec ~/.config/sway/scripts/switch-monitor-audio.sh
 
 # Laptop brightness
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5 && ~/.config/sway/scripts/get-brightness-int.sh > $WOBSOCK
 
+bindsym XF86MonBrightnessDown exec light -U 5 && ~/.config/sway/scripts/get-brightness-int.sh > $WOBSOCK
 # Moving around:
 #
     # Move your focus around
