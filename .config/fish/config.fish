@@ -1,4 +1,5 @@
 if test -z "$WAYLAND_DISPLAY" ; and test "$XDG_VTNR" != "" ; and test "$XDG_VTNR" -eq 1 ; and test "$SSH_TTY" != "/dev/pts/0"
+    set XDG_CURRENT_DESKTOP "sway"
     if test (prompt_hostname) = "asahi-linux"
         sway
     else
