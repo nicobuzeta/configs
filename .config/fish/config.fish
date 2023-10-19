@@ -1,5 +1,5 @@
 if test -z "$WAYLAND_DISPLAY" ; and test "$XDG_VTNR" != "" ; and test "$XDG_VTNR" -eq 1 ; and test "$SSH_TTY" != "/dev/pts/0"
-    set XDG_CURRENT_DESKTOP "sway"
+    source ~/.config/fish/functions/setup_sway_env.fish
     if test (prompt_hostname) = "asahi-linux"
         sway
     else
@@ -18,3 +18,4 @@ set -gx PYENV_ROOT "$HOME/.pyenv"
 pyenv init - fish | source
 alias config='/usr/bin/git --git-dir=$HOME/configs --work-tree=$HOME'
 
+rvm default
