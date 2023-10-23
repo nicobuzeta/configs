@@ -4,7 +4,7 @@ if test -z "$WAYLAND_DISPLAY" ; and test "$XDG_VTNR" != "" ; and test "$XDG_VTNR
         sway
     else
         bass source ~/.config/fish/setup_scripts/setup_nvidia_sway_env.sh
-        sway-nvidia
+	sway --unsupported-gpu
     end
 end
 
