@@ -498,8 +498,9 @@ local function is_server_in_servers(server_name)
 end
 
 if not is_server_in_servers("clangd") then
+  print("clangd not in servers")
   require('lspconfig').clangd.setup {
-  cmd = { 'clangd' }, -- Replace with full path if clangd isn't in your system's PATH
+  cmd = { 'clangd'}, -- Replace with full path if clangd isn't in your system's PATH
   capabilities = capabilities,
   on_attach = on_attach,
   }
