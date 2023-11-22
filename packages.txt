@@ -33,6 +33,8 @@ postgresql-libs 15.4-2
 pyenv 1:2.3.32-1
 python 3.11.6-1
 python-pip 23.3.1-1
+qt5-wayland 5.15.11+kde+r60-1
+qt6-wayland 6.6.0-2
 rbenv 1.2.0-1
 ripgrep 13.0.0-3
 rust 1:1.74.0-1
