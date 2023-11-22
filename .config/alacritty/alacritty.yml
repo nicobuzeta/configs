@@ -4,5 +4,5 @@ Font config:
 font:
     # Normal (Jetbrains mono):
     normal:
-        family: JetBrainsMono Nerd Font Mono
+        family: JetBrainsMono NF
         style: Regular

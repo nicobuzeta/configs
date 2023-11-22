@@ -14,7 +14,6 @@ if status is-interactive
 end
 
 set fish_greeting ""
-load_nvm
 set -gx PYENV_ROOT "$HOME/.pyenv"
 pyenv init - fish | source
 alias config='/usr/bin/git --git-dir=$HOME/configs --work-tree=$HOME'
