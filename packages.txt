@@ -5,7 +5,7 @@ base-devel
 bemenu
 btop
 clang
-cmake
+cmake-git
 discord
 downgrade
 efibootmgr
@@ -29,6 +29,7 @@ lib32-vulkan-intel
 linux
 linux-firmware
 linux-headers
+lldb
 lutris
 nautilus
 neovim
@@ -36,8 +37,10 @@ npm
 nvidia-dkms
 nvm
 pamixer
+paru
 pipewire-alsa
 pipewire-pulse
+playerctl
 polkit
 postgresql
 postgresql-libs
