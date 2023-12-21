@@ -277,7 +277,7 @@ bar {
     bindsym $mod+Shift+z exec zotero
 
 # Shutdown
-    bindsym $mod+Shift+Control+Escape exec 'shutdown -h now'
+    bindsym $mod+Shift+Control+Escape exec 'systemctl poweroff'
 
 # Keyboard
 input "type:keyboard" {
