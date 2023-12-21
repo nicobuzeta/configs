@@ -2,6 +2,10 @@
 command=/home/nicobuzeta/.config/i3blocks/i3blocks-contrib/battery2/battery2
 markup=pango
 interval=30
+[interfacestatus]
+command=/home/nicobuzeta/.config/i3blocks/personal/interfacestatus/interfacestatus
+INTERFACE=wg_home
+interval=5
 [wifi]
 command=/home/nicobuzeta/.config/i3blocks/i3blocks-contrib/wifi/wifi
 label=wifi:

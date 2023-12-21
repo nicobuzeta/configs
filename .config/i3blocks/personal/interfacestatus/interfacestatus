@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Check if "INTERFACE" interface is up or down using nmcli
+if nmcli -t -f NAME,DEVICE,STATE connection show | grep -q "${INTERFACE}:${INTERFACE}:activated"; then
+    STATUS="up"
+    COLOR="#00FF00"  # Green for up
+else
+    STATUS="down"
+    COLOR="#FF0000"  # Red for down
+fi
+
+# Print the status and color
+echo "${INTERFACE}: ${STATUS}"
+echo " "
+echo "$COLOR"
+
