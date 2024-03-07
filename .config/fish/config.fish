@@ -19,3 +19,5 @@ pyenv init - fish | source
 alias config='/usr/bin/git --git-dir=$HOME/configs --work-tree=$HOME'
 
 status --is-interactive; and rbenv init - fish | source
+
+zoxide init fish | source

@@ -273,7 +273,7 @@ bar {
 # Applications
     bindsym $mod+Shift+f exec firefox
     bindsym $mod+Shift+s exec slack
-    bindsym $mod+Shift+d exec vencord-desktop
+    bindsym $mod+Shift+d exec vesktop
     bindsym $mod+Shift+z exec zotero
 
 # Shutdown
