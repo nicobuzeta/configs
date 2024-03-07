@@ -21,3 +21,12 @@ alias config='/usr/bin/git --git-dir=$HOME/configs --work-tree=$HOME'
 status --is-interactive; and rbenv init - fish | source
 
 zoxide init fish | source
+
+# pnpm
+set -gx PNPM_HOME "/home/nicobuzeta/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+
+alias n="pnpm"
+# pnpm end
