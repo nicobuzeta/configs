@@ -83,7 +83,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {}, tag='legacy' },
+      { 'j-hui/fidget.nvim', opts = {}, tag = 'legacy' },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -96,7 +96,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',          opts = {} },
   { -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -143,7 +143,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',         opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -409,7 +409,7 @@ local on_attach = function(_, bufnr)
   end, '[W]orkspace [L]ist Folders')
   nmap('<leader>xh', vim.diagnostic.open_float, 'Open Diagnostics')
 
--- Create a command `:Format` local to the LSP buffer
+  -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
@@ -427,7 +427,7 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
   pyright = {},
-  tsserver ={},
+  tsserver = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -459,16 +459,15 @@ require("mason-nvim-dap").setup({
 require("dapui").setup({})
 
 require("mason-null-ls").setup({
-    ensure_installed = {
-      "eslint_d"
-    },
-    automatic_installation = false,
-    handlers = {},
+  ensure_installed = {
+  },
+  automatic_installation = false,
+  handlers = {},
 })
 require("null-ls").setup({
-    sources = {
-        -- Anything not supported by mason.
-    }
+  sources = {
+    -- Anything not supported by mason.
+  }
 })
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
@@ -489,19 +488,19 @@ mason_lspconfig.setup_handlers {
 }
 
 local function is_server_in_servers(server_name)
-    for _, server in pairs(vim.tbl_keys(servers)) do
-        if server == server_name then
-            return true
-        end
+  for _, server in pairs(vim.tbl_keys(servers)) do
+    if server == server_name then
+      return true
     end
-    return false
+  end
+  return false
 end
 
 if not is_server_in_servers("clangd") then
   require('lspconfig').clangd.setup {
-  cmd = { 'clangd'}, -- Replace with full path if clangd isn't in your system's PATH
-  capabilities = capabilities,
-  on_attach = on_attach,
+    cmd = { 'clangd' }, -- Replace with full path if clangd isn't in your system's PATH
+    capabilities = capabilities,
+    on_attach = on_attach,
   }
 end
 
@@ -516,7 +515,7 @@ local lspkind = require('lspkind')
 local has_words_before = function()
   if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_text(0, line-1, 0, line-1, col, {})[1]:match("^%s*$") == nil
+  return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
 end
 
 cmp.setup {
@@ -573,16 +572,16 @@ cmp.setup {
     -- { name = 'copilot' },
   },
   formatting = {
-  --   -- insert_text = require('copilot_cmp.format').remove_exiting,
+    --   -- insert_text = require('copilot_cmp.format').remove_exiting,
     format = lspkind.cmp_format({
-      mode = 'symbol_text', -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      mode = 'symbol_text',  -- show only symbol annotations
+      maxwidth = 50,         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
       symbol_map = { Copilot = "" },
 
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-      before = function (entry, vim_item)
+      before = function(entry, vim_item)
         return vim_item
       end
     })
