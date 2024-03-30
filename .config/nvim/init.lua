@@ -134,6 +134,7 @@ require('lazy').setup({
 
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
+    version = "v2.20.8",
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
@@ -371,11 +372,17 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
-  --
+
+
+  -- Turn off tsserver formatting, use prettier
+  if client.name == "tsserver" then
+    client.server_capabilities.documentFormattingProvider = false   -- 0.8 and later
+  end
+
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
@@ -385,6 +392,7 @@ local on_attach = function(_, bufnr)
 
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
+  print(client.server_capabilities.documentFormattingProvider)
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
