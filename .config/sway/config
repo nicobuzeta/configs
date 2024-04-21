@@ -84,6 +84,11 @@ input "1452:641:Apple_Internal_Keyboard_/_Trackpad" {
     xkb_options ctrl:nocaps
 }
 
+input "1133:16511:Logitech_G502" {
+    accel_profile "flat" 
+    pointer_accel 0.7 # set mouse sensitivity (between -1 and 1)
+}
+
 
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs

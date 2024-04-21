@@ -380,7 +380,7 @@ local on_attach = function(client, bufnr)
 
   -- Turn off tsserver formatting, use prettier
   if client.name == "tsserver" then
-    client.server_capabilities.documentFormattingProvider = false   -- 0.8 and later
+    client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
   end
 
   -- In this case, we create a function that lets us more easily define mappings specific
@@ -479,6 +479,7 @@ require("mason-null-ls").setup({
   handlers = {},
 })
 require("null-ls").setup({
+  debug = true,
   sources = {
     -- Anything not supported by mason.
   }
@@ -492,6 +493,9 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
+    if server_name == 'tsserver' then
+      return;
+    end
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
