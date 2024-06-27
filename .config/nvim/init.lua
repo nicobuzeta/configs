@@ -348,6 +348,9 @@ require('nvim-treesitter.configs').setup {
       },
     },
   },
+  matchup = {
+    enable = true
+  }
 }
 
 -- Diagnostic keymaps
@@ -380,6 +383,7 @@ local on_attach = function(client, bufnr)
 
   -- Turn off tsserver formatting, use prettier
   if client.name == "tsserver" then
+    print("turning off tsserver format")
     client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
   end
 
