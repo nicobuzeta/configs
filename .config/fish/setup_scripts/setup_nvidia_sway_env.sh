@@ -5,10 +5,11 @@ export WLR_NO_HARDWARE_CURSORS=1
 # Set wlroots renderer to Vulkan to avoid flickering
 export WLR_RENDERER=vulkan
 # OpenGL Variables
-export GBM_BACKEND=nvidia-drm
+#export GBM_BACKEND=nvidia-drm
 
-export __GL_GSYNC_ALLOWED=0
-export __GL_VRR_ALLOWED=0
-export __GLX_VENDOR_LIBRARY_NAME=nvidia
+#export __GL_GSYNC_ALLOWED=0
+#export __GL_VRR_ALLOWED=0
+#export __GLX_VENDOR_LIBRARY_NAME=nvidia
+#export VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json
 # Xwayland compatibility
-export XWAYLAND_NO_GLAMOR=0
+# export XWAYLAND_NO_GLAMOR=0
